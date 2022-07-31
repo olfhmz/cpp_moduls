@@ -2,9 +2,10 @@
 # define CONVERT_H
 
 # include <iostream>
-# include <iomanpip>
+# include <iomanip>
 # include <string>
 # include <limits>
+# include <cstdlib>
 
 # define CHAR 1
 # define FLOAT 2
@@ -14,34 +15,39 @@
 # define PSEUDOLIT 6
 
 class Convert {
-	private:
-		std::string def; //defolt string
-		int i_arg;
-		double d_arg;
-		char c_arg;
-		float f_arg;
-		int _type;
-		bool isWrong;
+private:
+	int i_arg;
+	float f_arg;
+	char c_arg;
+	double d_arg;
+	std::string def;
+	int type;
+	bool isWrong;
+public:
+	Convert();
 
-	public:
+	Convert(const std::string &def);
 
-		Convert();
-	//	Convert(const std::string &def);
-		~Convert();
+	Convert(const Convert &convert);
+	~Convert();
+	Convert & operator=(const Convert &rhs);
 
-		Convert(const Convert &src);
-		Convert &operator=(const Convert &src);
+	void detect_type(char *arg);
+	void convert_data();
+	void print_data();
+	void getIArg() const;
+	void getFArg() const;
+	void getCArg() const;
+	void getDArg() const;
+	int getType() const;
+	void setType(int type);
 
-		void getIType() const; //getters сразу печатают
-		void getDType() const;
-		void getCType() const;
-		void getFType() const;
+	const std::string &getDef() const;
 
-		void setType(int type);
-		int getType() const;
-
-		const std::string &getDef() const;
-		void setDef(const std::string &def);
+	void setDef(const std::string &def);
 };
+
+bool isLiteral(std::string str);
+std::string convertLiteralToDouble(std::string str);
 
 #endif
