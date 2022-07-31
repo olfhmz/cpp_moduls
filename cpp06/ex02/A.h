@@ -1,5 +1,5 @@
-#ifndef CPP06_A_H
-#define CPP06_A_H
+#ifndef A_H
+#define A_H
 
 #include "Base.h"
 class A : public Base {
@@ -14,4 +14,4 @@ public:
 };
 
 
-#endif //CPP06_A_H
+#endif

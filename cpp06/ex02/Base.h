@@ -1,7 +1,7 @@
-#ifndef CPP06_BASE_H
-#define CPP06_BASE_H
-
-#include <iostream>
+#ifndef BASE_H
+# define BASE_H
+ 
+# include <iostream>
 class Base {
 
 private:
@@ -14,4 +14,4 @@ public:
 };
 
 
-#endif //CPP06_BASE_H
+#endif

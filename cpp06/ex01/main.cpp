@@ -2,6 +2,9 @@
 #include <iostream>
 #include <sys/types.h>
 
+//Позволяет преобразовывать любой указатель в указатель любого другого типа.
+//Также позволяет преобразовывать любой целочисленный тип в любой тип указателя и наоборот.
+
 uintptr_t serialize(Data *ptr) {
 	return reinterpret_cast<uintptr_t>(ptr);
 }
