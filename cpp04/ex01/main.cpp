@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::cout << "♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡PI♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡" <<std::endl;
+	std::cout << "-----PI-----" <<std::endl;
 
 	std::cout	<< "♡Dog-Cat♡"
 				<< std::endl;
@@ -14,7 +14,7 @@ int main()
 	delete j;
 	delete i;
 
-	std::cout << "♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡" <<std::endl;
+	std::cout << "----------" <<std::endl;
 
 	std::cout	<< "♡Dog-Cat-Mas♡"
 				<< std::endl;
@@ -33,7 +33,7 @@ int main()
 		delete dogCat[k];
 	}
 
-	std::cout << "♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡" <<std::endl;
+	std::cout << "----------" <<std::endl;
 
 	std::cout	<< "Brain copy"
 				<< std::endl;
@@ -54,7 +54,7 @@ int main()
 							<< std::endl;
 			}
 		}
-		std::cout << "♡♡♡♡♡" <<std::endl;
+		std::cout << "-----" <<std::endl;
 
 		for (int k = 0; k < 3; ++k)
 		{
@@ -67,6 +67,6 @@ int main()
 		std::cout << "no idea" << std::endl;
 	}
 
-	std::cout << "♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡END_PI♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡" <<std::endl;
+	std::cout << "-----END_PI-----" <<std::endl;
 }
 

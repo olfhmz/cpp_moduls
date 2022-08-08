@@ -47,7 +47,7 @@ Span &Span::operator=(const Span &src) {
 }
 
 void Span::addNumber( const int n) {
-	if (_stored >= n)
+	if (_stored >= _n)
 		throw Span::aleradyFull();
 	_data.push_back(n);
 	_stored++;

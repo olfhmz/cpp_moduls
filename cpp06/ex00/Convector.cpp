@@ -94,6 +94,8 @@ void Convert::detect_type(char *arg)
 		this->setType(INVALID);
 }
 
+//static_cast -
+//Преобразует выражение () в тип идентификатора типа <>
 void Convert::convert_data()
 {
 	switch(this->getType())
