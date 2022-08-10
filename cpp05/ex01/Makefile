@@ -2,10 +2,10 @@ NAME = bure_part_two
 
 SRCS =	main.cpp\
 		Bureaucrat.cpp\
-		AForm.cpp
+		Form.cpp
 
 HDRS =	Bureaucrat.hpp\
-		AForm.hpp
+		Form.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

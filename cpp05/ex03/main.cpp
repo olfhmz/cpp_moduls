@@ -92,7 +92,7 @@ int main()
 	if (form != NULL)
 		delete form;
 
-	form =intern.makeForm("test", "SignedPaper");
+	form = intern.makeForm("test", "SignedPaper");
 	if (form != NULL)
 		delete form;
 

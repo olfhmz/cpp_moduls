@@ -2,7 +2,7 @@
 # define BURE_H
 
 # include <iostream>
-# include "AForm.hpp"
+# include "Form.hpp"
 
 class AForm;
 
