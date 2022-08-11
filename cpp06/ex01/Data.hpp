@@ -1,5 +1,5 @@
 #ifndef DATA_H
-# define DATA_Hs
+# define DATA_H
 
 # include <string>
 

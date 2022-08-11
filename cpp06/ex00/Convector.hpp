@@ -23,6 +23,7 @@ private:
 	std::string def;
 	int type;
 	bool isWrong;
+	
 public:
 	Convert();
 
@@ -43,7 +44,6 @@ public:
 	void setType(int type);
 
 	const std::string &getDef() const;
-
 	void setDef(const std::string &def);
 };
 

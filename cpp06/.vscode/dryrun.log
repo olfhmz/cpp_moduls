@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/aedyan/Desktop/moduels'
-make: Leaving directory `/Users/aedyan/Desktop/moduels'
+make: Entering directory `/Users/aedyan/Desktop/cpp06'
+make: Leaving directory `/Users/aedyan/Desktop/cpp06'
  
 make: *** No targets specified and no makefile found.  Stop.
 

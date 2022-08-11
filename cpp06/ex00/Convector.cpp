@@ -38,7 +38,7 @@ Convert::~Convert(){
 
 }
 
-// -- Type discovery and conversion -- //
+//Type discovery and conversion
 void Convert::detect_type(char *arg)
 {
 	int i = 0;
@@ -49,11 +49,11 @@ void Convert::detect_type(char *arg)
 	int has_neg = 0;
 	this->setDef(std::string(arg));
 
-//	if (isLiteral(this->def) == true)
-//	{
-//		this->setType(PSEUDOLIT);
-//		return;
-//	}
+	if (isLiteral(this->def) == true)
+	{
+		this->setType(PSEUDOLIT);
+		return;
+	}
 	while(arg[i])
 	{
 		if (arg[i] == '-' && i == 0)
@@ -83,7 +83,7 @@ void Convert::detect_type(char *arg)
 	}
 	else if (has_num == 1 && has_dot == 0 && has_f == 0 && has_letter == 0) {
 		this->setType(INT);
-		if (std::stol(this->def) >= INT8_MIN && std::stol(this->def) <= INT8_MAX) {
+		if (std::stol(this->def) >= INT64_MIN && std::stol(this->def) <= INT64_MAX) {
 			this->i_arg = std::stoi(this->def);
 			this->c_arg = this->i_arg;
 		}
@@ -126,14 +126,14 @@ void Convert::convert_data()
 
 }
 
-// -- Checks against each type for printing -- //
+//checks against each type for printing
 void Convert::getIArg() const {
 	std::cout << "int: ";
-	//if (this->type == PSEUDOLIT || this->type == INVALID)
-	//	std::cout << "impossible" << std::endl;
+	if (this->type == PSEUDOLIT || this->type == INVALID)
+		std::cout << "impossible" << std::endl;
 	if (this->isWrong == true)
 		std::cout << "overflow" << std::endl;
-	else if (std::stol(this->def) < INT8_MIN || std::stol(this->def) > INT8_MAX)
+	else if (std::stol(this->def) < INT64_MIN || std::stol(this->def) > INT64_MAX)
 		std::cout << "overflow" << std::endl;
 	else
 		std::cout << this->i_arg << std::endl;
@@ -141,22 +141,21 @@ void Convert::getIArg() const {
 
 void Convert::getFArg() const {
 	std::cout << "float: ";
-	//if (this->type == PSEUDOLIT) {
-	//	if (this->def == "-inf" || this->def == "+inf" || this->def == "nan")
-	//		std::cout << this->def << "f" << std::endl;
-	//	else
-	//		std::cout << this->def << std::endl;
-	//}
+	if (this->type == PSEUDOLIT) {
+		if (this->def == "-inf" || this->def == "+inf" || this->def == "nan")
+			std::cout << this->def << "f" << std::endl;
+		else
+			std::cout << this->def << std::endl;
+	}
 	if (this->type == INVALID)
 		std::cout << "impossible" << std::endl;
-	else if (std::stol(this->def) >= INT8_MIN && std::stol(this->def) <= INT8_MAX)
+	else if (std::stol(this->def) >= INT64_MIN && std::stol(this->def) <= INT64_MAX)
 	{
 		std::cout << std::fixed << std::setprecision(1) << this->f_arg << "f" << std::endl;
 	}
 	else
 		std::cout << this->def << "f" << std::endl;
 }
-
 
 void Convert::getCArg() const {
 	std::cout << "char: ";
@@ -170,12 +169,12 @@ void Convert::getCArg() const {
 
 void Convert::getDArg() const {
 	std::cout << "double: ";
-//	if (this->type == PSEUDOLIT) {
-//		std::cout << convertLiteralToDouble(this->def) << std::endl;
-//	}
+	if (this->type == PSEUDOLIT) {
+		std::cout << convertLiteralToDouble(this->def) << std::endl;
+	}
 	if (this->type == INVALID)
 		std::cout << "impossible" << std::endl;
-	else if (std::stol(this->def) >= INT8_MIN && std::stol(this->def) <= INT8_MAX)
+	else if (std::stol(this->def) >= INT64_MIN && std::stol(this->def) <= INT64_MAX)
 	{
 		std::cout << std::fixed << std::setprecision(1) << this->d_arg << std::endl;
 	}
@@ -206,7 +205,7 @@ void Convert::print_data() {
 	getDArg();
 }
 
-// -- External Functions -- //
+//external Functions
 bool isLiteral(std::string str)
 {
 	if (str == "nan"|| str == "nanf" || str == "+inff" || str == "-inff" || str == "-inf" || str == "+inf")
@@ -214,7 +213,7 @@ bool isLiteral(std::string str)
 	return false;
 }
 
-std::string convertLiteralToDouble(std::string str)
+std::string (std::string str)
 {
 	if (str == "nanf")
 		return "nan";
