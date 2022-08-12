@@ -131,7 +131,7 @@ void Convert::getIArg() const {
 	std::cout << "int: ";
 	if (this->type == PSEUDOLIT || this->type == INVALID)
 		std::cout << "impossible" << std::endl;
-	if (this->isWrong == true)
+	else if (this->isWrong == true)
 		std::cout << "overflow" << std::endl;
 	else if (std::stol(this->def) < INT64_MIN || std::stol(this->def) > INT64_MAX)
 		std::cout << "overflow" << std::endl;
@@ -147,7 +147,7 @@ void Convert::getFArg() const {
 		else
 			std::cout << this->def << std::endl;
 	}
-	if (this->type == INVALID)
+	else if (this->type == INVALID)
 		std::cout << "impossible" << std::endl;
 	else if (std::stol(this->def) >= INT64_MIN && std::stol(this->def) <= INT64_MAX)
 	{
@@ -172,7 +172,7 @@ void Convert::getDArg() const {
 	if (this->type == PSEUDOLIT) {
 		std::cout << convertLiteralToDouble(this->def) << std::endl;
 	}
-	if (this->type == INVALID)
+	else if (this->type == INVALID)
 		std::cout << "impossible" << std::endl;
 	else if (std::stol(this->def) >= INT64_MIN && std::stol(this->def) <= INT64_MAX)
 	{
@@ -213,7 +213,7 @@ bool isLiteral(std::string str)
 	return false;
 }
 
-std::string (std::string str)
+std::string convertLiteralToDouble(std::string str)
 {
 	if (str == "nanf")
 		return "nan";
